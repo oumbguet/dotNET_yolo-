@@ -14,7 +14,7 @@ def split_data_set(image_dir):
 
     ind = 0
     count = 0
-    data_test_size = int(0.1 * data_size / 2.0)
+    data_test_size = int(0.2 * data_size)
     test_array = random.sample(range(data_size), k=data_test_size)
     
     for f in os.listdir(image_dir):
