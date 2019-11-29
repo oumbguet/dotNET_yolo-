@@ -15,7 +15,7 @@ def split_data_set(image_dir):
     ind = 0
     count = 0
     data_test_size = int(0.2 * data_size)
-    test_array = random.sample(range(data_size), k=data_test_size)
+    test_array = random.sample(range(data_size), k = data_test_size)
     
     for f in os.listdir(image_dir):
         if(len(f.split(".")) > 1 and f.split(".")[1] == "png"):
@@ -23,12 +23,12 @@ def split_data_set(image_dir):
             
             if ind in test_array:
                 if count < data_test_size / 2.0:
-                    f_test.write(image_dir+'/'+f+'\n')
+                    f_test.write(image_dir + '/' + f + '\n')
                     count += 1
                 else:
-                    f_val.write(image_dir+'/'+f+'\n')
+                    f_val.write(image_dir + '/' + f + '\n')
             else:
-                f_train.write(image_dir+'/'+f+'\n')
+                f_train.write(image_dir + '/' + f + '\n')
 
 
 split_data_set('./Images')
